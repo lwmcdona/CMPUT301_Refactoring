@@ -1,6 +1,5 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.busytwitter;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,7 +14,7 @@ public class NormalLonelyTweet extends Tweet implements Serializable {
 	}
 
 	@Override
-	public boolean isValid() {
+	public boolean isValidBody() {
 		int length = getTweetBody().trim().length();
 		if (length == 0
 				|| length > 10) {

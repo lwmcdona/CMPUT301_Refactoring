@@ -1,9 +1,9 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.busytwitter;
 
 import java.io.IOException;
 import java.util.Date;
 
-public abstract class Tweet {
+public abstract class Tweet extends ReaderWriter {
     private static final long serialVersionUID = 1L;
     protected Date tweetDate;
     protected String tweetBody;
@@ -24,18 +24,20 @@ public abstract class Tweet {
         this.tweetBody = tweetBody;
     }
 
-    private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+    @Override
+    protected void writeObject(java.io.ObjectOutputStream out) throws IOException {
         out.writeObject(tweetDate);
         out.writeObject(tweetBody);
     }
 
-    private void readObject(java.io.ObjectInputStream in) throws IOException,
+    @Override
+    protected void readObject(java.io.ObjectInputStream in) throws IOException,
             ClassNotFoundException {
         tweetDate = (Date) in.readObject();
         tweetBody = (String) in.readObject();
     }
 
-    public abstract boolean isValid();
+    public abstract boolean isValidBody();
 
     @Override
     public String toString() {

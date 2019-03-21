@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.busytwitter;
 
 public class ImportantTweet extends Tweet {
     public int getName() {
@@ -12,7 +12,7 @@ public class ImportantTweet extends Tweet {
     int name;
 
     @Override
-    public boolean isValid() {
+    public boolean isValidBody() {
         if (getTweetBody().trim().length() == 0
                 || getTweetBody().trim().length() > 10) {
             return false;
