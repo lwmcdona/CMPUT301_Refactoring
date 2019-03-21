@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.busytwitter;
 
 import java.util.Date;
 import java.util.List;
